@@ -24,7 +24,7 @@ function Login() {
       });
     } else {
       console.log("details don't match");
-      setError("Details don't match");
+      setError(<p id="error_message">Details don&#39;t match</p>);
     }
   };
 
