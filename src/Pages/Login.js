@@ -1,13 +1,14 @@
 import React, { useReducer, useState } from "react";
 import LoginForm from "./LoginForm";
 
+
 function Login() {
   const adminUser = {
     email: "nume@yahoo.com",
     password: "parola",
   };
 
-  const [user, setUser] = useState({ name: "", email: "" });
+  const [user, setUser] = useState({ name: "",role: "", email: "" });
   const [error, setError] = useState("");
 
   const Login = (details) => {

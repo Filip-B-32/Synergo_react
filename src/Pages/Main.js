@@ -4,7 +4,7 @@ import Search from './Search'
 function Main() {
     return (
         <div>
-            HOME PAGE
+            <h1>HOME PAGE</h1>
         </div>
     )
 }
