@@ -104,30 +104,18 @@ nav a{
   padding-right: 15px;
 }
 
-.sidebar{
-  height: 100%;
-  width: 160px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color:#8965e0;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
-.sidebar a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: black;
-  display: block;
-}
-
-.sidebar a:hover{
-  color:pink;
-}
-
 .main {
-  margin-left: 160px;
+  margin-left: 10px;
   padding: 10px;
+}
+
+#offcanvas-menu {
+	background-color: #8965e0 ;
+}
+
+header{
+  background-color: #1e1e2f;
+  position: sticky;
+  top:0;
+  z-index: 100;
 }
