@@ -119,3 +119,8 @@ header{
   top:0;
   z-index: 100;
 }
+
+.footer-h2,
+.footer-p{
+  text-align: center;
+}

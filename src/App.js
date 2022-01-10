@@ -21,7 +21,7 @@ function App() {
       <Router>
         <header>
           <img src="img_header.png" />
-          <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+          <Navbar id="navbar" collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
               <Navbar.Brand href="#home">Navigation</Navbar.Brand>
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
