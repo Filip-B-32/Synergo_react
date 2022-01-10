@@ -8,7 +8,7 @@ function Login() {
     password: "parola",
   };
 
-  const [user, setUser] = useState({ name: "",role: "", email: "" });
+  const [user, setUser] = useState({ email: "" });
   const [error, setError] = useState("");
 
   const Login = (details) => {
@@ -20,7 +20,6 @@ function Login() {
     ) {
       console.log("Logged in");
       setUser({
-        name: details.name,
         email: details.email,
       });
     } else {
@@ -37,7 +36,7 @@ function Login() {
       {user.email != "" ? (
         <div className="welcome">
           <h2>
-            Welcome, <span>{user.name}</span>
+            Welcome!!!
           </h2>
           <button onClick={Logout}>Logout</button>
         </div>

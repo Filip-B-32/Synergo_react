@@ -72,20 +72,6 @@ a:hover{
   font-size: 30px;
 }
 
-#form_login{
-  text-align: center; 
-}
-
-#password_div{
-  padding-right:35px;
-}  
-#email_div{
-
-}  
-#name_div{
-  padding-right:4px;
-}  
-
 a{
   text-decoration: inherit;
   color: #5603ad;
@@ -123,4 +109,17 @@ header{
 .footer-h2,
 .footer-p{
   text-align: center;
+}
+
+
+@media screen and (min-width: 1600px) {
+  .mb-3{
+    padding-right: 1300px;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .mb-3{
+    padding-right: 600px;
+  }
 }

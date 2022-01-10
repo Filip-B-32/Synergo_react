@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { Form } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import { Badge } from "react-bootstrap";
 
 function LoginForm({ Login, error }) {
   const [details, setDetails] = useState({ name: "", email: "", password: "" });
@@ -10,45 +13,46 @@ function LoginForm({ Login, error }) {
   };
 
   return (
-    <form id="form_login" onSubmit={submitHandler}>
-      <div className="form-inner">
-        <h2 id="Loginh2">LogIn</h2>
+    <Form onSubmit={submitHandler}>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <h1>
+          <Badge bg="secondary">Login</Badge>
+        </h1>
         {error != "" ? <div className="error">{error}</div> : ""}
-        <div id="name_div" className="form-group">
-          <label htmlFor="name">Name: </label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            onChange={(e) => setDetails({ ...details, name: e.target.value })}
-            value={details.name}
-          />
-        </div>
-        <div id="email_div" className="form-group">
-          <label htmlFor="radio">Email: </label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            onChange={(e) => setDetails({ ...details, email: e.target.value })}
-            value={details.email}
-          />
-        </div>
-        <div id="password_div" className="form-group">
-          <label htmlFor="password">Password: </label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            onChange={(e) =>
-              setDetails({ ...details, password: e.target.value })
-            }
-            value={details.password}
-          />
-        </div>
-      </div>
-      <input type="submit" value="LOGIN" />
-    </form>
+        <Form.Label>Email address</Form.Label>
+        <Form.Control 
+          className="form-area"
+          placeholder="Enter email"
+          type="email"
+          name="email"
+          id="email"
+          onChange={(e) => setDetails({ ...details, email: e.target.value })}
+          value={details.email}
+        />
+        <Form.Text className="text-muted">
+          We'll never share your email with anyone else.
+        </Form.Text>
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Password</Form.Label>
+        <Form.Control
+         className="form-area"
+          placeholder="Password"
+          type="password"
+          name="password"
+          id="password"
+          onChange={(e) => setDetails({ ...details, password: e.target.value })}
+          value={details.password}
+        />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicCheckbox">
+        <Form.Check type="checkbox" label="Check me out" />
+      </Form.Group>
+      <Button variant="primary" type="submit" value="LOGIN">
+        Submit
+      </Button>
+    </Form>
   );
 }
 
