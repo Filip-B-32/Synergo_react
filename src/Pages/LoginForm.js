@@ -18,9 +18,10 @@ function LoginForm({ Login, error }) {
         <h1>
           <Badge bg="secondary">Login</Badge>
         </h1>
+        <br></br>
         {error != "" ? <div className="error">{error}</div> : ""}
         <Form.Label>Email address</Form.Label>
-        <Form.Control 
+        <Form.Control
           className="form-area"
           placeholder="Enter email"
           type="email"
@@ -37,7 +38,7 @@ function LoginForm({ Login, error }) {
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
         <Form.Control
-         className="form-area"
+          className="form-area"
           placeholder="Password"
           type="password"
           name="password"

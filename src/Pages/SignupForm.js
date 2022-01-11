@@ -1,33 +1,41 @@
 import React from "react";
+import { Form } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import { Badge } from "react-bootstrap";
 
 function SignupForm() {
   return (
-    <div className="signuppage">
-      <form id="form_signup">
-        <div className="form-inner">
-          <h2 id="Loginh2">Sign Up</h2>
-          <h3>Get started with us today!</h3>
-          <div class="nume">
-            <label htmlFor="name">Name </label>
-            <input type="text" id="name" />
-          </div>
-          <div class="email">
-            <label htmlFor="email">Email </label>
-            <input type="text" id="email" />
-          </div>
-          <div class="parola">
-            <label htmlFor="password">Password </label>
-            <input type="password" id="password" />
-          </div>
-          <div class="parola2">
-            <label htmlFor="password2">Confirm Password </label>
-            <input type="password" id="password2" />
-          </div>
-          
-        </div>
-        <button className="signup-btn" type="submit"> Sign Up</button>
-      </form>
-    </div>
+    <Form>
+      <h1>
+        <Badge bg="secondary">Signup</Badge>
+      </h1>
+      <br></br>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Name</Form.Label>
+        <Form.Control type="text" placeholder="Enter Name" />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Email address</Form.Label>
+        <Form.Control type="email" placeholder="Enter email" />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Password</Form.Label>
+        <Form.Control type="password" placeholder="Password" aria-describedby="passwordHelpBlock"/>
+        <Form.Text id="passwordHelpBlock" muted>
+          Your password must be 8-20 characters long, contain letters and
+          numbers, and must not contain spaces, special characters, or emoji.
+        </Form.Text>
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Confirm Password</Form.Label>
+        <Form.Control type="password" placeholder="Confirm Password" />
+      </Form.Group>
+      <Button variant="primary" type="submit">
+        Signup
+      </Button>
+    </Form>
   );
 }
 

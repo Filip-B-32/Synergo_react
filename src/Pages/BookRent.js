@@ -18,6 +18,7 @@ function BookRent() {
           <h1>
              <Badge bg="secondary">Rent a book</Badge>
           </h1>
+          <br></br>
           {books?.length > 0 ? (
             <Table striped bordered hover variant="dark">
               <thead>
