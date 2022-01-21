@@ -122,9 +122,19 @@ header{
   .mb-3{
     padding-right: 600px;
   }
+  .img-main{
+    width: 50%;
+  }
 }
 
 .img-about{
   padding-right: 110px;
   padding-left: 110px;
+}
+
+.img-main{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 700px;
 }

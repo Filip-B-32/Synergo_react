@@ -1,8 +1,19 @@
 import React, { useReducer, useState } from "react";
 import LoginForm from "./LoginForm";
-
+import { useEffect } from "react";
+import { Table } from "react-bootstrap";
 
 function Login() {
+
+  const [accounts, setAccounts] = useState(null);
+  useEffect(() => {
+    fetch("/newapi/accounts")
+      .then((res) => res.json())
+      .then((json) => setAccounts(json.accounts))
+      .catch((err) => console.log(err));
+  }, []);
+
+
   const adminUser = {
     email: "nume@yahoo.com",
     password: "parola",
@@ -29,15 +40,15 @@ function Login() {
   };
 
   const Logout = () => {
-    setUser({ name: "", email: "" });
+    setUser({ email: "" });
   };
+
+
   return (
     <div className="Login">
       {user.email != "" ? (
         <div className="welcome">
-          <h2>
-            Welcome!!!
-          </h2>
+          <h2>Welcome!!!</h2>   
           <button onClick={Logout}>Logout</button>
         </div>
       ) : (
@@ -47,4 +58,4 @@ function Login() {
   );
 }
 
-export default Login
+export default Login;

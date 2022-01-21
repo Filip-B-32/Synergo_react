@@ -26,14 +26,16 @@ function BookRent() {
                   <th>ID</th>
                   <th>Name</th>
                   <th>Author</th>
+                  <th>Date added</th>
                 </tr>
               </thead>
               <tbody>
-                {books.map(({ id, name, author }) => (
+                {books.map(({ id, name, author,date }) => (
                   <tr key={id}>
                     <td>{id}</td>
                     <td>{name}</td>
                     <td>{author}</td>
+                    <td>{date}</td>
                     <td>
                       <Button variant="outline-success">Rent</Button>
                     </td>
