@@ -5,19 +5,19 @@ import { Table } from "react-bootstrap";
 
 function Login() {
 
-  const [accounts, setAccounts] = useState(null);
+  const [accounts, setAccounts] = useState(null); //fluent api
   useEffect(() => {
-    fetch("/newapi/accounts")
+    fetch("/api/accounts")
       .then((res) => res.json())
       .then((json) => setAccounts(json.accounts))
       .catch((err) => console.log(err));
   }, []);
 
-
+/*
   const adminUser = {
     email: "nume@yahoo.com",
     password: "parola",
-  };
+  };*/
 
   const [user, setUser] = useState({ email: "" });
   const [error, setError] = useState("");
@@ -25,9 +25,15 @@ function Login() {
   const Login = (details) => {
     console.log(details);
 
+    let verify = 0;
+    for(let i=0;i<accounts?.length;i++){
+      if(details.email ==  accounts[i].email &&
+        details.password == accounts[i].password){
+          verify = 1;
+        }
+    }
     if (
-      details.email == adminUser.email &&
-      details.password == adminUser.password
+      verify == 1
     ) {
       console.log("Logged in");
       setUser({

@@ -3,14 +3,17 @@ import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
 
+
 function BookRent() {
-  const [books, setBooks] = useState(null);
+  const [books, setBooks] = useState(false);
+
   useEffect(() => {
     fetch("/api/books")
       .then((res) => res.json())
       .then((json) => setBooks(json.books))
       .catch((err) => console.log(err));
   }, []);
+
   return (
     <div className="container">
       <div className="row">
